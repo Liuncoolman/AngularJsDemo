@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS 过滤器</title>
+    <script src="//cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<!--<div ng-app="myApp" ng-controller="personCtrl">
+
+    <p>姓名为 {{ lastName | uppercase }}</p>
+    <p>姓名为 {{ lastName | lowercase }}</p>
+
+</div>
+
+<hr>-->
+
+<h3>currency 过滤器</h3>
+<!--<div ng-app="myFilterApp" ng-controller="costCtrl">
+    ​
+    数量: <input type="number" ng-model="quantity">
+    价格: <input type="number" ng-model="price">
+    ​
+    <p>总价 = {{ (quantity * price) | currency }}</p>
+    ​
+</div>-->
+
+<hr>
+
+<h3>向指令添加过滤器</h3>
+<!--<div ng-app="nameApp" ng-controller="namesCtrl">
+    ​
+    <p>循环对象:</p>
+    <ul>
+&lt;!&ndash;        orderBy 过滤器根据表达式排列数组&ndash;&gt;
+        <li ng-repeat="x in names | orderBy:'country'">
+            {{ x.name + ', ' + x.country }}
+        </li>
+    </ul>
+    ​
+</div>-->
+
+<hr>
+
+<h3>自定义过滤器</h3>
+<div ng-app="reverseApp" ng-controller="myCtrl">
+    ​
+    ​
+    姓名: {{ msg | reverse }}
+    ​
+</div>
+
+<script src="personController.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="namesCtrl">
+
+    <ul>
+        <li ng-repeat="x in names">
+            {{ x.name + ', ' + x.country }}
+        </li>
+    </ul>
+
+</div>
+<!--引用外部js-->
+<script src="namesController.js"></script>
+
+</body>
+</html>
