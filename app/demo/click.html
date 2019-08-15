@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS 事件</title>
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<h3>ng-click 指令</h3>
+</body>
+
+<!--<div ng-app="myApp" ng-controller="myCtrl">
+
+    <button ng-click="count= count + 1">点我！</button>
+
+    <p>{{ count }}</p>
+
+</div>-->
+<hr>
+
+<h3>隐藏 HTML 元素</h3>
+<div ng-app="personApp" ng-controller="personCtrl">
+
+    <button ng-click="toggle()">隐藏/显示</button>
+
+    <p ng-hide="status">
+        名: <input type="text" ng-model="firstName"><br>
+        姓名: <input type="text" ng-model="lastName"><br>
+        <br>
+        Full Name: {{firstName + " " + lastName}}
+    </p>
+
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function ($scope) {
+        $scope.count = 0;
+    });
+
+    var personApp = angular.module('personApp', []);
+    personApp.controller("personCtrl", function ($scope) {
+        $scope.status = false;
+        $scope.firstName = "John";
+        $scope.lastName = "Doe";
+        $scope.toggle = function () {
+            $scope.status = !$scope.status;
+        };
+    });
+</script>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS 表单</title>
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+
+<h3>Checkbox（复选框）</h3>
+<!--<div ng-app="">
+    <form>
+        选中复选框，显示标题:
+        <input type="checkbox" ng-model="myVar">
+    </form>
+    <h1 ng-show="myVar">My Header</h1>
+</div>
+
+<p>标题使用了 ng-show 指令，复选框选中后显示 h1 标签内容。</p>-->
+<hr>
+
+
+<h3>单选框</h3>
+<!--<div ng-app="">
+
+    <form>
+        选择一个选项:
+        <input type="radio" ng-model="myVar" value="dogs">Dogs
+        <input type="radio" ng-model="myVar" value="tuts">Tutorials
+        <input type="radio" ng-model="myVar" value="cars">Cars
+    </form>
+
+    <div ng-switch="myVar">
+        <div ng-switch-when="dogs">
+            <h1>Dogs</h1>
+            <p>Welcome to a world of dogs.</p>
+        </div>
+        <div ng-switch-when="tuts">
+            <h1>Tutorials</h1>
+            <p>Learn from examples.</p>
+        </div>
+        <div ng-switch-when="cars">
+            <h1>Cars</h1>
+            <p>Read about cars.</p>
+        </div>
+    </div>
+
+    <p>ng-switch 指令根据单选按钮的选择结果显示或隐藏 HTML 区域。</p>
+
+</div>-->
+<hr>
+
+
+<h3>下拉菜单</h3>
+<!--<div ng-app="">
+    <form>
+        选择一个选项:
+        <select ng-model="myVar" ng-init="myVar='dogs'">&lt;!&ndash; 设置默认选中&ndash;&gt;
+            <option value="dogs">Dogs
+            <option value="tuts">Tutorials
+            <option value="cars">Cars
+        </select>
+    </form>
+
+    <div ng-switch="myVar">
+        <div ng-switch-when="dogs">
+            <h1>Dogs</h1>
+            <p>Welcome to a world of dogs.</p>
+        </div>
+        <div ng-switch-when="tuts">
+            <h1>Tutorials</h1>
+            <p>Learn from examples.</p>
+        </div>
+        <div ng-switch-when="cars">
+            <h1>Cars</h1>
+            <p>Read about cars.</p>
+        </div>
+    </div>
+
+    <p>ng-switch 指令根据下拉菜单的选择结果显示或隐藏 HTML 区域。</p>
+</div>-->
+<hr>
+
+<h3>HTML 表单</h3>
+<div ng-app="myApp" ng-controller="formCtrl">
+    <form novalidate>
+        First Name:<br>
+        <input type="text" ng-model="user.firstName"><br>
+        Last Name:<br>
+        <input type="text" ng-model="user.lastName">
+        <br><br>
+        <button ng-click="reset()">RESET</button>
+    </form>
+    <p>form = {{master}}</p>
+    <p>master = {{master}}</p>
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('formCtrl', function ($scope) {
+        $scope.master = {firstName: "John", lastName: "Doe"};
+        $scope.reset = function () {
+            $scope.user = angular.copy($scope.master);// 给user赋值
+        };
+        $scope.reset();
+    });
+</script>
+
+
+</body>
+</html>

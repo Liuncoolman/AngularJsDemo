@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS 笔记应用</title>
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body ng-app="myNoteApp" ng-controller="myCtrl">
+<h2>我的笔记</h2>
+
+<!-- 画一个输入框-->
+<textarea ng-model="message" cols="40" rows="10" style="background-color: antiquewhite" placeholder="请输入内容"></textarea>
+<br>
+<P>
+    <button ng-click="save()">保存</button>
+    <button ng-click="clear()">清除</button>
+</P>
+<br>
+<p>剩余字数: <span ng-bind="left()"></span></p>
+
+<br>
+
+<p>输入的内容<br>{{message}}</p>
+<script>
+    var app = angular.module("myNoteApp", []);
+    app.controller("myCtrl", function ($scope) {
+        $scope.message = "";
+        $scope.left = function () {
+            return 100 - $scope.message.length;
+        };
+        $scope.clear = function () {
+            $scope.message = "";
+        };
+        $scope.save = function () {
+            alert("Sava Success")
+            console.log('输入的内容：'+$scope.message)
+        };
+    });
+
+</script>
+</body>
+</html>
